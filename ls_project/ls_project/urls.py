@@ -15,7 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.views.generic import RedirectView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('ls_app/', include('livesounds.urls')),
+
+
+    path('', RedirectView.as_view(url='ls_app/', permanent=True)),
 ]

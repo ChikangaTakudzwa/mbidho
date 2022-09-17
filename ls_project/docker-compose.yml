@@ -10,3 +10,8 @@ services:
     image: lsapp:v1
     container_name: ls_container
     command: python manage.py runserver 0.0.0.0:8000
+  db:
+    image: postgres
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+      

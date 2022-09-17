@@ -15,8 +15,8 @@ services:
   db:
     image: postgres
     volumes:
-      - ./ls_app/media:/var/lib/postgresql/data
-      # - ./data/db:/var/lib/postgresql/data
+      # - ./ls_app/media:/var/lib/postgresql/data
+      - ./data/db:/var/lib/postgresql/data
     environment:
       - POSTGRES_DB=livesoundsdb
       - POSTGRES_USER=postgres

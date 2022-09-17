@@ -7,6 +7,6 @@ services:
       - .:/livesounds
     ports:
       - 8000:8000
-    image: app:lsapp
+    image: lsapp:v1
     container_name: ls_container
     command: python manage.py runserver 0.0.0.0:8000

@@ -76,10 +76,12 @@ WSGI_APPLICATION = 'ls_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'livesoundsdb',
         'USER': 'postgres',
         'PASSWORD': 'chikangapostgre',
+        'HOST': 'db',
+        'PORT': 5432,
     }
 }
 

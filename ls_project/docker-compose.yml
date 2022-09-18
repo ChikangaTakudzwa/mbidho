@@ -7,6 +7,9 @@ services:
       - .:/livesounds
     ports:
       - 8000:8000
+    networks:
+      app_net:
+        ipv4_address: "192.168.0.2"
     image: lsapp:v1
     container_name: ls_container
     command: python manage.py runserver 0.0.0.0:8000
@@ -25,6 +28,9 @@ services:
       - POSTGRES_PASSWORD=chikangapostgre
     ports:
       - "5432:5432"
+    networks:
+      app_net:
+        ipv4_address: "192.168.0.3"
     container_name: postgres_db
     restart: always
 
@@ -32,8 +38,21 @@ services:
     container_name: pgadmin
     image: dpage/pgadmin4
     restart: always
+    volumes:
+      - ./data/pgadmin-data:/var/lib/pgadmin/data
     environment:
       - PGADMIN_DEFAULT_EMAIL=root@root.com
       - PGADMIN_DEFAULT_PASSWORD=root
     ports:
       - "5050:80"
+    networks:
+      app_net:
+        ipv4_address: "192.168.0.4"
+
+networks:
+  app_net:
+    ipam:
+      driver: default
+      config:
+        - subnet: "192.168.0.0/24"
+          gateway: "192.168.0.1"

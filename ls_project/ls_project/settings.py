@@ -32,8 +32,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-MEDIA_ROOT = ''
-MEDIA_URL = ''
+MEDIA_URL = '/media/'
+MEDIA_ROOT = '/home/TakudzwaChikanga/mbidho/ls_project/ls_app/media'
 
 # Application definition
 
@@ -83,14 +83,24 @@ WSGI_APPLICATION = 'ls_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'livesoundsdb',
+#         'USER': 'postgres',
+#         'PASSWORD': 'chikangapostgre',
+#         'HOST': 'db',
+#         'PORT': 5432,
+#     }
+# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'livesoundsdb',
-        'USER': 'postgres',
-        'PASSWORD': 'chikangapostgre',
-        'HOST': 'db',
-        'PORT': 5432,
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'TakudzwaChikanga$lsdb',
+        'USER': 'TakudzwaChikanga',
+        'PASSWORD': 'livesounds',
+        'HOST': 'TakudzwaChikanga.mysql.pythonanywhere-services.com',
+        'PORT': 3306,
     }
 }
 
@@ -129,6 +139,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
+
+STATIC_ROOT = "/home/TakudzwaChikanga/mbidho/ls_project/ls_app/static"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

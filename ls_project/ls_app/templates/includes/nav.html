@@ -1,0 +1,28 @@
+<nav class="navbar navbar-toggleable-sm navbar-custom navbar-inverse">
+    <div class="container">
+        <button class="navbar-toggler navbar-toggler-right" style="margin-top: 7%;" type="button" data-toggle="collapse" data-target="#navbarToggler-1" aria-controls="navbarToggler-1" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        {% load static %}
+        <a class="navbar-brand" href="#"><img src="{% static 'images/logo_web_50.png' %}" /></a>
+        <div class="collapse navbar-collapse pull-xs-right justify-content-end" id="navbarToggler-1">
+            <ul class="navbar-nav mt-2 mt-md-0">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="/admin/livesounds">Admin</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-outline-primary btn-outline" href="#available">Get Beats Now</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

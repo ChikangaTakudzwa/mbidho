@@ -1,1 +1,50 @@
-Wasup Yall its your boy
+{% extends "base.html" %}
+
+		{% block beats %}
+		<section>
+			<div class="mt-5">
+				<div class="container mt-2">
+					<h4 id="available" class="text-center m-4">Browse Available Beats</h4>
+				</div>
+			</div>
+		</section>
+
+		<section class="container mb-3">
+			<div class="row">
+				{% for beat in page_obj %}
+				<div class="col-lg-4 col-md-6 mb-3">
+					<div class="card-deck">
+						<div class="card">
+						  
+						  <div class="card-body">
+							<div class="row">
+								<div class="col-6">
+									{% comment %} {% load static %} {% endcomment %}
+									<img class="card-img-top" src="{{MEDIA_URL}}{{beat.artwork}}" alt="Card image cap" style="width:100%;height:100%">
+								</div>
+								<div class="col-6">
+									<h5 class="card-title">{{beat.beat_name}}</h5>
+									<ul class="list-group list-group-flush">
+										<li class="list-group-item p-0"><small>Prod by: {{beat.producer}} </small></li>
+										<li class="list-group-item p-0"><small>Date: {{beat.rel_date}} </small></li>
+										<li class="list-group-item p-0"><small>Genre: {{beat.genre}} </small></li>
+										<li class="list-group-item p-0"><small>Type: {{beat.beat_type}} </small></li>
+									</ul>
+								</div>
+							</div>
+						  </div>
+						  <div class="card-footer p-0 align-center">
+							<audio controls style="width: 100%;">
+								{% comment %} {% load static %} {% endcomment %}
+								<source src={{MEDIA_URL}}{{beat.the_file}} type="audio/wav">
+							  Your browser does not support the audio element.
+							</audio>
+						  </div>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+			{% include 'includes/pagination.html' %}
+		</section>
+		{% endblock %}

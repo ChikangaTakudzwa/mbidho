@@ -33,7 +33,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['*']
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = '/media/ls_app/media'
+MEDIA_ROOT = '/home/TakudzwaChikanga/mbidho/ls_project/ls_app/media/'
 
 # Application definition
 

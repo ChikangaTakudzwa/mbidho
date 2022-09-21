@@ -19,4 +19,4 @@ def index(request):
         'num_of_beats': num_of_beats,
         'page_obj': page_obj,
     }
-    return render(request, context, 'index.html')
+    return render(request, 'index.html', context)

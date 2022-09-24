@@ -54,10 +54,10 @@ spec:
       - name: db-server
         image: dpage/pgadmin4
         env:
-          - name: PGADMIN_DEFAULT_EMAIL
-            value: root@root.com
-          - name: PGADMIN_DEFAULT_PASSWORD
-            value: root
+        - name: PGADMIN_DEFAULT_EMAIL
+          value: root@root.com
+        - name: PGADMIN_DEFAULT_PASSWORD
+          value: root
         resources:
           limits:
             memory: "128Mi"

@@ -59,5 +59,8 @@ spec:
             cpu: "500m"
         ports:
         - containerPort: 80
+        environment:
+          - PGADMIN_DEFAULT_EMAIL=root@root.com
+          - PGADMIN_DEFAULT_PASSWORD=root
 
 

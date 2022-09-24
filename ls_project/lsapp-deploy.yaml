@@ -69,54 +69,29 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: ls-app
   labels:
-    run: ls-app
-spec:
-  selector:
     app: ls-app
-  ports:
-  - port: 8000
-    targetPort: 8000
----
-
-# apiVersion: v1
-# kind: Service
-# metadata:
-#   name: db-server
-#   labels:
-#     run: db-server
-# spec:
-#   selector:
-#     app: db-server
-#   ports:
-#   - port: 80
-#     targetPort: 80
-# ---
-
-apiVersion: v1
-kind: Service 
-metadata:
-  name: db-server
-  labels:
-    run: db-server
+  name: ls-app
 spec:
-  type: LoadBalancer
-  selector:
-    app: db-server
+  type: NodePort
   ports:
     - port: 80
-
-# apiVersion: apps/v1
-# kind: Route
-# metadata:
-#   labels:
-#     app: ls-app
-#   name: ls-app
-# spec:
-#   host: ls-app.takudzwachikanga-dev.svc.cluster.local
-#   port:
-#     targetPort: 8000-8000
-#   to:
-#     kind: Service
-#     name: ls-app
+      protocol: TCP
+      targetPort: 8080
+  selector:
+    app: ls-app
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: db-server
+  name: db-server
+spec:
+  type: NodePort
+  ports:
+    - port: 80
+      protocol: TCP
+      targetPort: 84
+  selector:
+    app: db-server

@@ -53,14 +53,17 @@ spec:
       containers:
       - name: db-server
         image: dpage/pgadmin4
+        env:
+          - name: PGADMIN_DEFAULT_EMAIL
+            value: root@root.com
+          - name: PGADMIN_DEFAULT_PASSWORD
+            value: root
         resources:
           limits:
             memory: "128Mi"
             cpu: "500m"
         ports:
         - containerPort: 80
-        environment:
-          - PGADMIN_DEFAULT_EMAIL=root@root.com
-          - PGADMIN_DEFAULT_PASSWORD=root
+        
 
 

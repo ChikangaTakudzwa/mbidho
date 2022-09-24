@@ -31,3 +31,33 @@ spec:
             cpu: "500m"
         ports:
         - containerPort: 8000
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: db-server
+  labels:
+    enviroment: pg-admin
+spec:
+  selector:
+    matchLabels:
+      app: db-server
+      enviroment: pg-admin
+  template:
+    metadata:
+      labels:
+        app: db-server
+        enviroment: pg-admin
+    spec:
+      containers:
+      - name: db-server
+        image: dpage/pgadmin4
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
+
+

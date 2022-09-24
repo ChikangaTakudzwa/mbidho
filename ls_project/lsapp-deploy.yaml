@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    enviroment: livesounds
+  name: ls_app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ls_app
+      enviroment: livesounds
+  minReadySeconds: 10
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: rollingUpdate
+  template:
+    metadata:
+      labels:
+        app: ls_app
+        enviroment: livesounds
+    spec:
+      containers:
+      - name: ls_container
+        image: takudzwachikanga/lsapp:v1
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8000

@@ -3,27 +3,27 @@ kind: Deployment
 metadata:
   labels:
     enviroment: livesounds
-  name: ls_app
+  name: ls-app
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: ls_app
+      app: ls-app
       enviroment: livesounds
   minReadySeconds: 10
   strategy:
     rollingUpdate:
       maxSurge: 1
       maxUnavailable: 0
-    type: rollingUpdate
+    type: RollingUpdate
   template:
     metadata:
       labels:
-        app: ls_app
+        app: ls-app
         enviroment: livesounds
     spec:
       containers:
-      - name: ls_container
+      - name: ls-container
         image: takudzwachikanga/lsapp:v1
         resources:
           limits:

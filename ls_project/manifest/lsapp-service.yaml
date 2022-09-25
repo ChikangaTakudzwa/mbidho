@@ -11,7 +11,7 @@ metadata:
 spec:
   type: LoadBalancer
   ports:
-  - name: "80"
+  - name: "8000"
     port: 8000
     targetPort: 8000
   selector:

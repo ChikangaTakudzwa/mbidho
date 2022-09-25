@@ -2,7 +2,7 @@ version: '3'
 
 services:
   lsapp:
-    # build: .
+    build: .
     image: takudzwachikanga/lsapp:v1
     volumes:
       - .:/livesounds
@@ -22,7 +22,7 @@ services:
       - db
 
   db:
-    image: takudzwachikanga/postgres:v1
+    image: postgres
     volumes:
       - ./data/db:/var/lib/postgresql/data
     env_file: .env

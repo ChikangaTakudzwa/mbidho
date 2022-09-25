@@ -59,7 +59,7 @@ spec:
             - name: POSTGRES_DB
             - name: POSTGRES_PASSWORD
             - name: POSTGRES_USER
-          image: takudzwachikanga/postgres:v1
+          image: postgres
           name: postgres-db
           ports:
             - containerPort: 5432

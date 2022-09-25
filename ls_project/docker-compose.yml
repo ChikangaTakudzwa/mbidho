@@ -7,7 +7,7 @@ services:
     volumes:
       - .:/livesounds
     ports:
-      - 8000:8000
+      - "8000:8000"
     env_file: .env
     environment:
       - PGDATABASE=$PGDATABASE
@@ -27,9 +27,9 @@ services:
       - ./data/db:/var/lib/postgresql/data
     env_file: .env
     environment:
-      - PGDATABASE=$PGDATABASE
-      - PGUSER=$PGUSER
-      - PGPASSWORD=$PGPASSWORD
+      - POSTGRES_DB=$PGDATABASE
+      - POSTGRES_USER=$PGUSER
+      - POSTGRES_PASSWORD=$PGPASSWORD
     ports:
       - "5432:5432"
     container_name: postgres-db

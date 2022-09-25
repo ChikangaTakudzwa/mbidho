@@ -1,0 +1,66 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.18.0 (06a2e56)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: pgadmin
+  name: pgadmin
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.service: pgadmin
+    spec:
+      containers:
+      - env:
+        - name: PGADMIN_DEFAULT_EMAIL
+          valueFrom:
+            configMapKeyRef:
+              key: PGADMIN_DEFAULT_EMAIL
+              name: pgadmin-env
+        - name: PGADMIN_DEFAULT_PASSWORD
+          valueFrom:
+            configMapKeyRef:
+              key: PGADMIN_DEFAULT_PASSWORD
+              name: pgadmin-env
+        - name: PGDATABASE
+          valueFrom:
+            configMapKeyRef:
+              key: PGDATABASE
+              name: pgadmin-env
+        - name: PGPASSWORD
+          valueFrom:
+            configMapKeyRef:
+              key: PGPASSWORD
+              name: pgadmin-env
+        - name: PGPORT
+          valueFrom:
+            configMapKeyRef:
+              key: PGPORT
+              name: pgadmin-env
+        - name: PGUSER
+          valueFrom:
+            configMapKeyRef:
+              key: PGUSER
+              name: pgadmin-env
+        image: dpage/pgadmin4
+        name: pgadmin
+        ports:
+        - containerPort: 5050
+        resources: {}
+        volumeMounts:
+        - mountPath: /var/lib/pgadmin/data
+          name: pgadmin-claim0
+      restartPolicy: Always
+      volumes:
+      - name: pgadmin-claim0
+        persistentVolumeClaim:
+          claimName: pgadmin-claim0
+status: {}

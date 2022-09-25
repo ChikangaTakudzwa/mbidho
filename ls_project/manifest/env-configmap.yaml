@@ -10,5 +10,5 @@ kind: ConfigMap
 metadata:
   creationTimestamp: null
   labels:
-    io.kompose.service: pgadmin-env
-  name: pgadmin-env
+    io.kompose.service: db-env
+  name: env

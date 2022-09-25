@@ -3,18 +3,18 @@ kind: Service
 metadata:
   annotations:
     kompose.cmd: kompose convert
-    kompose.version: 1.18.0 (06a2e56)
+    kompose.version: 1.26.0 (40646f47)
   creationTimestamp: null
   labels:
-    io.kompose.service: pgadmin
-  name: pgadmin
+    io.kompose.service: lsapp
+  name: lsapp
 spec:
   type: LoadBalancer
   ports:
-  - name: "80"
-    port: 80
-    targetPort: 80
+    - name: "8000"
+      port: 8000
+      targetPort: 8000
   selector:
-    io.kompose.service: pgadmin
+    io.kompose.service: lsapp
 status:
   loadBalancer: {}

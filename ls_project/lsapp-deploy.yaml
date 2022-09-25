@@ -75,9 +75,10 @@ metadata:
 spec:
   type: NodePort
   ports:
-    - port: 80
+    - port: 8000
       protocol: TCP
-      targetPort: 8080
+      targetPort: 8000
+      nodePort: 30036
   selector:
     app: ls-app
 ---
@@ -90,8 +91,9 @@ metadata:
 spec:
   type: NodePort
   ports:
-    - port: 80
+    - port: 84
       protocol: TCP
       targetPort: 84
+      nodePort: 30036
   selector:
     app: db-server

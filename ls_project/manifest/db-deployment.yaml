@@ -55,7 +55,7 @@ spec:
               key: PGUSER
               name: db-env
         image: postgres
-        name: postgres_db
+        name: postgres-db
         ports:
         - containerPort: 5432
         resources: {}

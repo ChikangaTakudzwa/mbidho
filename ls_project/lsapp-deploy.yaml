@@ -94,6 +94,6 @@ spec:
     - port: 84
       protocol: TCP
       targetPort: 84
-      nodePort: 30036
+      nodePort: 30037
   selector:
     app: db-server

@@ -7,11 +7,15 @@ metadata:
   creationTimestamp: null
   labels:
     io.kompose.service: db
+    enviroment: db
   name: db
 spec:
   replicas: 1
   strategy:
     type: Recreate
+  selector:
+    matchLabels:
+      enviroment: db
   template:
     metadata:
       creationTimestamp: null

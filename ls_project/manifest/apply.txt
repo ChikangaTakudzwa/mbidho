@@ -1,0 +1,1 @@
+db-claim0-persistentvolumeclaim.yaml,db-deployment.yaml,db-env-configmap.yaml,db-service.yaml,lsapp-claim0-persistentvolumeclaim.yaml,lsapp-deployment.yaml,lsapp-env-configmap.yaml,lsapp-service.yaml,pgadmin-claim0-persistentvolumeclaim.yaml,pgadmin-deployment.yaml,pgadmin-env-configmap.yaml,pgadmin-service.yaml,secret.yaml

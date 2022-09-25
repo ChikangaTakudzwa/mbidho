@@ -56,7 +56,7 @@ spec:
         image: dpage/pgadmin4
         name: pgadmin
         ports:
-        - containerPort: 5050
+        - containerPort: 80
         resources: {}
         volumeMounts:
         - mountPath: /var/lib/pgadmin/data

@@ -12,6 +12,9 @@ spec:
   replicas: 1
   strategy:
     type: Recreate
+  selector:
+    matchLabels:
+      io.kompose.service: lsapp
   template:
     metadata:
       creationTimestamp: null
@@ -58,7 +61,7 @@ spec:
               key: PGUSER
               name: lsapp-env
         image: takudzwachikanga/lsapp:v1
-        name: ls_container
+        name: ls-container
         ports:
         - containerPort: 8000
         resources: {}

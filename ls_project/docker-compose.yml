@@ -34,20 +34,20 @@ services:
       - "5432:5432"
     container_name: postgres-db
     restart: always
-    depends_on:
-      - pgadmin
+    # depends_on:
+    #   - pgadmin
 
-  pgadmin:
-    container_name: pgadmin
-    image: dpage/pgadmin4
-    restart: always
-    volumes:
-      - ./data/pgadmin-data:/var/lib/pgadmin/data
-    env_file: .env
-    environment:
-      - PGADMIN_DEFAULT_EMAIL=$PGADMIN_DEFAULT_EMAIL
-      - PGADMIN_DEFAULT_PASSWORD=$PGADMIN_DEFAULT_PASSWORD
-    ports:
-      - "80:80"
+  # pgadmin:
+  #   container_name: pgadmin
+  #   image: dpage/pgadmin4
+  #   restart: always
+  #   volumes:
+  #     - ./data/pgadmin-data:/var/lib/pgadmin/data
+  #   env_file: .env
+  #   environment:
+  #     - PGADMIN_DEFAULT_EMAIL=$PGADMIN_DEFAULT_EMAIL
+  #     - PGADMIN_DEFAULT_PASSWORD=$PGADMIN_DEFAULT_PASSWORD
+  #   ports:
+  #     - "80:80"
 volumes:
   data:

@@ -2,8 +2,8 @@ version: '3'
 
 services:
   lsapp:
-    build: .
-    image: lsapp:v1
+    # build: .
+    image: takudzwachikanga/lsapp:v1
     volumes:
       - .:/livesounds
     ports:
@@ -16,13 +16,15 @@ services:
       - PGHOST=db
       - PGPORT=$PGPORT
     container_name: ls-container
+    labels:
+      kompose.service.expose: true
     command: python manage.py runserver 0.0.0.0:8000
     restart: always
     depends_on:
       - db
 
   db:
-    image: postgres
+    image: takudzwachikanga/postgres:v1
     volumes:
       - ./data/db:/var/lib/postgresql/data
     env_file: .env
@@ -33,6 +35,8 @@ services:
     ports:
       - "5432:5432"
     container_name: postgres-db
+    labels:
+      kompose.service.expose: true
     restart: always
     # depends_on:
     #   - pgadmin

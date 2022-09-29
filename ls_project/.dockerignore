@@ -1,2 +1,3 @@
-*/.ls_env
-*/manifest
+.ls_env
+manifest
+data/db

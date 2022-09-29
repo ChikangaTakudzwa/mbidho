@@ -79,7 +79,7 @@ spec:
         - name: lsapp-claim0
           persistentVolumeClaim:
             claimName: lsapp-claim0
-        - name: myvol
-          hostPath:
-            path: /home/user/mbidho/ls_project
+        # - name: myvol
+        #   hostPath:
+        #     path: /home/user/mbidho/ls_project
 status: {}

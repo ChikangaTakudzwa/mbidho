@@ -2,8 +2,8 @@ version: '3'
 
 services:
   lsapp:
-    build: .
-    image: livesounds:v1
+    # build: .
+    image: takudzwachikanga/livesounds:v1
     volumes:
       - .:/home/livesounds
     ports:

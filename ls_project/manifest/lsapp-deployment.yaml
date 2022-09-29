@@ -66,11 +66,15 @@ spec:
         - containerPort: 8000
         resources: {}
         volumeMounts:
-        - mountPath: /livesounds/
-          name: lsapp-claim0
+        - mountPath: /home/livesounds
+          name: myvol
+          # name: lsapp-claim0
       restartPolicy: Always
       volumes:
       - name: lsapp-claim0
         persistentVolumeClaim:
           claimName: lsapp-claim0
+      - name: myvol
+        hostPath:
+          path: /home/user/mbidho/ls_project
 status: {}

@@ -9,7 +9,7 @@ metadata:
     io.kompose.service: lsapp
   name: lsapp
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       io.kompose.service: lsapp
@@ -66,20 +66,20 @@ spec:
             - name: POSTGRES_DB
             - name: POSTGRES_PASSWORD
             - name: POSTGRES_USER
-          image: takudzwachikanga/lsapp:v1
+          image: takudzwachikanga/livesounds:v1
           name: ls-container
           ports:
             - containerPort: 8000
           resources: {}
           volumeMounts:
             - mountPath: /home/livesounds
-              name: myvol
+              name: lsapp-claim0
       restartPolicy: Always
       volumes:
         - name: lsapp-claim0
           persistentVolumeClaim:
             claimName: lsapp-claim0
         - name: myvol
-          hostPath: 
+          hostPath:
             path: /home/user/mbidho/ls_project
 status: {}

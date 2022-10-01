@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lsapp
+  labels:
+    app: lsapp
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: lsapp
+  template:
+    metadata:
+      labels:
+        app: lsapp
+    spec:
+      containers:
+        - image: takudzwachikanga/lsapp:new
+          name: lsapp
+          ports:
+            - containerPort: 8000
+              name: gunicorn

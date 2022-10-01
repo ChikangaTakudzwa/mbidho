@@ -2,10 +2,9 @@ version: '3'
 
 services:
   lsapp:
-    build: .
-    image: takudzwachikanga/livesounds:v1
-    volumes:
-      - .:/home/livesounds
+    image: lsapp:new
+    # volumes:
+    #   - .:/home/livesounds
     ports:
       - "8000:8000"
     env_file: .env
@@ -16,7 +15,7 @@ services:
       - PGHOST=db
       - PGPORT=$PGPORT
     container_name: ls-container
-    command: python manage.py runserver 0.0.0.0:8000
+    # command: python manage.py runserver 0.0.0.0:8000
     restart: always
     depends_on:
       - db

@@ -89,7 +89,7 @@ DATABASES = {
         'NAME': 'livesoundsdb',
         'USER': 'postgres',
         'PASSWORD': 'chikangapostgre',
-        'HOST': '159.122.177.59',
+        'HOST': 'localhost',
         'PORT': 5432,
     }
 }

@@ -15,7 +15,7 @@ spec:
         app: lsapp
     spec:
       containers:
-        - image: takudzwachikanga/lsapp:new
+        - image: takudzwachikanga/lsapp:new2
           name: lsapp
           ports:
             - containerPort: 8000

@@ -17,6 +17,9 @@ spec:
       containers:
         - image: takudzwachikanga/lsapp:new2
           name: lsapp
+          env:
+          - name: POSTGRES_HOST
+            value: "lsapp-svc.default"
           ports:
             - containerPort: 8000
               name: gunicorn

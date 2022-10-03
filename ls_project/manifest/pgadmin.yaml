@@ -39,7 +39,7 @@ spec:
           value: password
         - name: PGADMIN_PORT
           value: "80"
-        image: dpage/pgadmin4:3.6
+        image: dpage/pgadmin
         imagePullPolicy: IfNotPresent
         name: pgadmin
         ports:

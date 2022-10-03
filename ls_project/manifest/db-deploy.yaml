@@ -21,13 +21,15 @@ spec:
               value: postgres
             - name: POSTGRES_PASSWORD
               value: chikangapostgre
+            - name: PGDATA
+              value: /tmp
           ports:
             - containerPort: 5432  # Exposes container port
           # envFrom:
           #   - configMapRef:
           #       name: postgres-config
           volumeMounts:
-            - mountPath: /var/lib/postgresql/data/db
+            - mountPath: /var/lib/postgresql/data
               name: postgredb
       volumes:
         - name: postgredb

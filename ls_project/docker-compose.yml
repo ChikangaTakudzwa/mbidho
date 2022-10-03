@@ -2,7 +2,7 @@ version: '3'
 
 services:
   lsapp:
-    image: lsapp:new
+    image: lsapp:new3
     # volumes:
     #   - .:/home/livesounds
     ports:
@@ -21,7 +21,7 @@ services:
       - db
 
   db:
-    image: postgres
+    image: postgres:14
     volumes:
       - ./data/db:/var/lib/postgresql/data
     env_file: .env

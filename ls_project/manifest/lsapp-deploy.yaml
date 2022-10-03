@@ -16,6 +16,7 @@ spec:
     spec:
       containers:
         - image: takudzwachikanga/lsapp:new3
+          imagePullPolicy: Always
           name: lsapp
           env:
           - name: POSTGRES_HOST

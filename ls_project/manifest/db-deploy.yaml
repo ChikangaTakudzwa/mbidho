@@ -16,6 +16,11 @@ spec:
         - name: postgres
           image: postgres # Sets Image
           imagePullPolicy: "IfNotPresent"
+          env:
+            - name: POSTGRES_USER
+              value: postgres
+            - name: POSTGRES_PASSWORD
+              value: chikangapostgre
           ports:
             - containerPort: 5432  # Exposes container port
           envFrom:

@@ -22,7 +22,7 @@ spec:
             - name: POSTGRES_PASSWORD
               value: chikangapostgre
             - name: PGDATA
-              value: /tmp
+              value: /var/lib/postgresql/data/mydb
           ports:
             - containerPort: 5432  # Exposes container port
           # envFrom:

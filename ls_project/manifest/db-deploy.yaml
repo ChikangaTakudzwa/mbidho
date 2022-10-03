@@ -23,9 +23,9 @@ spec:
               value: chikangapostgre
           ports:
             - containerPort: 5432  # Exposes container port
-          envFrom:
-            - configMapRef:
-                name: postgres-config
+          # envFrom:
+          #   - configMapRef:
+          #       name: postgres-config
           volumeMounts:
             - mountPath: /var/lib/postgresql/data
               name: postgredb

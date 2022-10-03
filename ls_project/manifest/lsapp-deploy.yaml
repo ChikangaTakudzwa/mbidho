@@ -15,7 +15,7 @@ spec:
         app: lsapp
     spec:
       containers:
-        - image: takudzwachikanga/lsapp:new2
+        - image: takudzwachikanga/lsapp:new3
           name: lsapp
           env:
           - name: POSTGRES_HOST

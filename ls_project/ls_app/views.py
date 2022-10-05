@@ -1,7 +1,7 @@
 # from turtle import title
 from django.shortcuts import render
-from django.http import HttpResponse
-from django.template import loader
+# from django.http import HttpResponse
+# from django.template import loader
 from .models import beats
 from django.core.paginator import Paginator
 
@@ -20,3 +20,4 @@ def index(request):
         'page_obj': page_obj,
     }
     return render(request, 'index.html', context)
+  

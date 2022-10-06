@@ -26,4 +26,4 @@ class Beats(models.Model):
 
     def __str__(self):
         """String for representing the Model object."""
-        return self.beat_name
+        return str(self.beat_name)

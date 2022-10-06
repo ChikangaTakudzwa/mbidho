@@ -1,5 +1,5 @@
+""" App config """
 from django.apps import AppConfig
-""" App congig """
 
 class LsAppConfig(AppConfig):
     """ My App Config """

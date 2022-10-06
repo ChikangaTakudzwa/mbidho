@@ -1,7 +1,7 @@
-from django.shortcuts import render
 """ Views """
 from django.core.paginator import Paginator
 from .models import Beats
+from django.shortcuts import render
 
 # Create your views here.
 def index(request):

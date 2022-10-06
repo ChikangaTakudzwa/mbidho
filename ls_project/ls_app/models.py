@@ -1,5 +1,5 @@
-from django.db import models
 """ Models """
+from django.db import models
 
 beat_type = (("Free", "Free"), ("Buy", "Buy"))
 beat_genres = (("HipHop", "HipHop"), ("Dancehall", "Dancehall"))

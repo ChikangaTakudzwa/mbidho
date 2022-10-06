@@ -1,12 +1,12 @@
-# from secrets import choice
 from django.db import models
+""" Models """
 
 beat_type = (("Free", "Free"), ("Buy", "Buy"))
 beat_genres = (("HipHop", "HipHop"), ("Dancehall", "Dancehall"))
 
 
 # Create your models here.
-class beats(models.Model):
+class Beats(models.Model):
     """Model of beats."""
     beat_name = models.CharField(max_length=50, help_text="Enter beat name")
     producer = models.CharField(max_length=50, help_text="Enter producer name")

@@ -1,6 +1,7 @@
 """ Test Cases """
 from django.test import TestCase
-from .views import index
+from .apps import LsAppConfig
+
 
 # Create your tests here.
 class TestViews(TestCase):
@@ -24,7 +25,7 @@ class TestViews(TestCase):
     #  T E S T   C A S E S
     ######################################################################
 
-    def test_numofbeats_int(self):
-        """ Test if num of beats returns int """
-        cnt = index.context.title
-        self.assertEqual((cnt), str())
+    def test_app_class(self):
+        """ Test apps class """
+        # appn = LsAppConfig.name
+        self.assertEqual((LsAppConfig.name), "ls_app")

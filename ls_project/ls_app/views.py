@@ -1,11 +1,13 @@
 """ Views """
 from django.core.paginator import Paginator
-from .models import Beats
 from django.shortcuts import render
+from .models import Beats
 
 # Create your views here.
 def index(request):
+
     """ Index Page """
+    
     all_beats = Beats.objects.all().order_by('-rel_date').values()
     num_of_beats = Beats.objects.all().count()
     paginator = Paginator(all_beats, 9)

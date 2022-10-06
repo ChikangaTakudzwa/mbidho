@@ -2,9 +2,10 @@ version: '3'
 
 services:
   lsapp:
-    image: lsapp:new3
-    # volumes:
-    #   - .:/home/livesounds
+    build: .
+    image: lsapp:new
+    volumes:
+      - .:/livesounds
     ports:
       - "8000:8000"
     env_file: .env

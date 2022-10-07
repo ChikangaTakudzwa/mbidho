@@ -24,7 +24,7 @@ env:
   IMAGE_NAME: ls-cd
   IKS_CLUSTER: chikanga-cluster
   DEPLOYMENT_NAME: ls-cd-deploy
-  PORT: 5001
+  PORT: 32038
 
 jobs:
   setup-build-publish-deploy:

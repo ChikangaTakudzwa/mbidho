@@ -48,8 +48,8 @@ jobs:
     # Authenticate with IBM Cloud CLI
     - name: Authenticate with IBM Cloud CLI
       run: |
-        ibmcloud login --apikey "${IBM_CLOUD_API_KEY}" -r "${IBM_CLOUD_REGION}" -g default
-        ibmcloud api-set https://cloud.ibm.com target -g Default
+        ibmcloud login --apikey "${IBM_CLOUD_API_KEY}" -r "${IBM_CLOUD_REGION}" -g Default
+        ibmcloud api-set https://cloud.ibm.com
         ibmcloud cr region-set "${IBM_CLOUD_REGION}"
         ibmcloud cr login
 

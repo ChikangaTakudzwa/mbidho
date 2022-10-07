@@ -12,7 +12,7 @@ on:
   push:
     branches: [ "k8s" ]
     tags:        
-      - 'v'
+      - '*'
 
 # Environment variables available to all jobs and steps in this workflow
 env:

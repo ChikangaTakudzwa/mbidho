@@ -18,7 +18,7 @@ env:
   IBM_CLOUD_API_KEY: ${{ secrets.IBM_CLOUD_API_KEY }}
   IBM_CLOUD_REGION: us-south
   RESOURCE_GROUP: Default
-  API_ENDPOINT: api.eu-de.containers.cloud.ibm.com:30473
+  API_ENDPOINT: https://c108.eu-de.containers.cloud.ibm.com:30473
   ICR_NAMESPACE: ${{ secrets.ICR_NAMESPACE }}
   REGISTRY_HOSTNAME: us.icr.io
   IMAGE_NAME: ls-cd

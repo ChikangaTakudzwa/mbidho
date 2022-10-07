@@ -1,15 +1,14 @@
-# from turtle import title
-from django.shortcuts import render
-from django.http import HttpResponse
-from django.template import loader
-from .models import beats
+""" Views """
 from django.core.paginator import Paginator
+from django.shortcuts import render
+from .models import Beats
 
 
 # Create your views here.
 def index(request):
-    all_beats = beats.objects.all().order_by('-rel_date').values()
-    num_of_beats = beats.objects.all().count()
+    """ Index Page """
+    all_beats = Beats.objects.all().order_by('-rel_date').values()
+    num_of_beats = Beats.objects.all().count()
     paginator = Paginator(all_beats, 9)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)

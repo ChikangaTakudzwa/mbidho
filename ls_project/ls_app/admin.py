@@ -1,5 +1,6 @@
+""" Admin registered models """
 from django.contrib import admin
-from .models import beats
+from .models import Beats
 
 # Register your models here.
-admin.site.register(beats)
+admin.site.register(Beats)

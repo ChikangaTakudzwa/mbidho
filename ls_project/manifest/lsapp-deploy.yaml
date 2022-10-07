@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lsapp
+  labels:
+    app: lsapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: lsapp
+  template:
+    metadata:
+      labels:
+        app: lsapp
+    spec:
+      containers:
+        - image: takudzwachikanga/lsapp:new3
+          imagePullPolicy: Always
+          name: lsapp
+          env:
+          - name: POSTGRES_HOST
+            value: "postgres.default"
+          ports:
+            - containerPort: 8000
+              name: gunicorn

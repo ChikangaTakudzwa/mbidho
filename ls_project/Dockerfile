@@ -1,11 +1,11 @@
-FROM python:3.8-slim-buster
-ENV PYTHONUNBUFFERED=1
+FROM ubuntu:20.04
+RUN apt-get update && apt-get install -y tzdata && apt install -y python3.8 python3-pip
+RUN apt install python3-dev libpq-dev nginx -y
+
+ADD . /livesounds
 WORKDIR /livesounds
+RUN pip install -r requirements.txt
 
-COPY requirements.txt requirements.txt
-RUN pip3 install -r requirements.txt
-
-COPY . .
-
-CMD [ "python3", "manage.py", "runserver", "0.0.0.0:8000" ]
+EXPOSE 8000
+CMD ["gunicorn", "--bind", ":8000", "--workers", "3", "ls_project.wsgi"]
 
